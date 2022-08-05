@@ -189,3 +189,33 @@ const JSONStringify = (obj) => {
     return `{` + removeComma(objStr) + `}`;
   }
 };
+
+//Q: Write a function which will take array of multiple functions and execute them in left to right fashion
+
+// Difficulty: medium
+
+// Ex: customFn([ fn1,fn2,fn3 ]) should run fn1 first and then fn2 and fn3
+ function fn1(){
+   console.log('abc')
+return ('abc')
+}
+function fn2(){
+  console.log('abca')
+  return ('abca')
+  }
+  function fn3(){
+    console.log('abcd')
+    return ('abcd')
+    }
+function customFn(){
+ return [ fn1(),fn2(),fn3() ].map(ele =>{ 
+    //console.log(ele)
+    return ele
+  })
+
+}
+console.log(customFn())
+
+
+
+
